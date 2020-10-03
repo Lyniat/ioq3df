@@ -807,6 +807,9 @@ void UI_SetActiveMenu( uiMenuCommand_t menu ) {
 	Menu_Cache();
 
 	switch ( menu ) {
+	case UIMENU_PLAYERSHOT:
+		UI_PlayerShotMenu();
+		return;
 	case UIMENU_NONE:
 		UI_ForceMenuOff();
 		return;

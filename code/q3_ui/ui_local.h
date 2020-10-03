@@ -94,6 +94,9 @@ extern vmCvar_t	ui_cdkey;
 extern vmCvar_t	ui_cdkeychecked;
 extern vmCvar_t	ui_ioq3;
 
+extern vmCvar_t	ui_playershotmode;
+extern vmCvar_t	ui_playershotweapon;
+extern vmCvar_t ui_playershotbackgroundcolor;
 
 //
 // ui_qmenu.c
@@ -394,6 +397,12 @@ extern void UI_PlayerModelMenu( void );
 extern void PlayerModel_Cache( void );
 
 //
+// ui_playershot.c
+//
+extern void UI_PlayerShotMenu( void );
+//extern void PlayerShot_Cache( void );
+
+//
 // ui_playersettings.c
 //
 extern void UI_PlayerSettingsMenu( void );
@@ -523,6 +532,11 @@ typedef struct {
 	int				realWeapon;
 } playerInfo_t;
 
+void shotmod_UI_DrawPlayerFace( float x, float y, float w, float h, playerInfo_t *pi, int time );
+void shotmod_UI_DrawPlayerSideFace( float x, float y, float w, float h, playerInfo_t *pi, int time );
+void shotmod_UI_DrawPlayerHead( float x, float y, float w, float h, playerInfo_t *pi, int time );
+void shotmod_UI_DrawPlayerBody( float x, float y, float w, float h, playerInfo_t *pi, int time );
+
 void UI_DrawPlayer( float x, float y, float w, float h, playerInfo_t *pi, int time );
 void UI_PlayerInfo_SetModel( playerInfo_t *pi, const char *model );
 void UI_PlayerInfo_SetInfo( playerInfo_t *pi, int legsAnim, int torsoAnim, vec3_t viewAngles, vec3_t moveAngles, weapon_t weaponNum, qboolean chat );
@@ -557,6 +571,11 @@ typedef struct {
 	qboolean			demoversion;
 	qboolean			firstdraw;
 } uiStatic_t;
+
+extern void			shotmod_DrawPlayerBody( float x, float y, float w, float h );
+extern void			shotmod_DrawPlayerFace( float x, float y, float w, float h );
+extern void			shotmod_DrawPlayerSideFace( float x, float y, float w, float h );
+extern void			shotmod_DrawPlayerHead( float x, float y, float w, float h );
 
 extern void			UI_Init( void );
 extern void			UI_Shutdown( void );
@@ -653,6 +672,7 @@ void			trap_R_AddLightToScene( const vec3_t org, float intensity, float r, float
 void			trap_R_RenderScene( const refdef_t *fd );
 void			trap_R_SetColor( const float *rgba );
 void			trap_R_DrawStretchPic( float x, float y, float w, float h, float s1, float t1, float s2, float t2, qhandle_t hShader );
+void        	trap_R_ModelBounds( clipHandle_t model, vec3_t mins, vec3_t maxs );
 void			trap_UpdateScreen( void );
 int				trap_CM_LerpTag( orientation_t *tag, clipHandle_t mod, int startFrame, int endFrame, float frac, const char *tagName );
 void			trap_S_StartLocalSound( sfxHandle_t sfx, int channelNum );

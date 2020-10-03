@@ -157,6 +157,11 @@ vmCvar_t	ui_server16;
 vmCvar_t	ui_cdkeychecked;
 vmCvar_t	ui_ioq3;
 
+
+vmCvar_t	ui_playershotmode;
+vmCvar_t	ui_playershotweapon;
+vmCvar_t	ui_playershotbackgroundcolor;
+
 static cvarTable_t		cvarTable[] = {
 	{ &ui_ffa_fraglimit, "ui_ffa_fraglimit", "20", CVAR_ARCHIVE },
 	{ &ui_ffa_timelimit, "ui_ffa_timelimit", "0", CVAR_ARCHIVE },
@@ -212,6 +217,11 @@ static cvarTable_t		cvarTable[] = {
 	{ &ui_server14, "server14", "", CVAR_ARCHIVE },
 	{ &ui_server15, "server15", "", CVAR_ARCHIVE },
 	{ &ui_server16, "server16", "", CVAR_ARCHIVE },
+
+	{ &ui_playershotmode, "ui_playershotmode", "1", CVAR_ARCHIVE },
+	{ &ui_playershotweapon, "ui_playershotweapon", "5", CVAR_ARCHIVE },
+	{ &ui_playershotbackgroundcolor, "ui_playershotbackgroundcolor", "0.0 0.0 0.0 1.0", CVAR_ARCHIVE },
+
 
 	{ &ui_cdkeychecked, "ui_cdkeychecked", "0", CVAR_ROM },
 	{ &ui_ioq3, "ui_ioq3", "1", CVAR_ROM }

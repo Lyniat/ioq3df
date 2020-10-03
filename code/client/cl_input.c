@@ -914,6 +914,12 @@ void CL_SendCmd( void ) {
 	CL_WritePacket();
 }
 
+void IN_PlayerShotMenu_f (void) { 
+	if ( uivm ) {
+		VM_Call( uivm, UI_SET_ACTIVE_MENU, UIMENU_PLAYERSHOT );
+	}
+}
+
 /*
 ============
 CL_InitInput
@@ -921,6 +927,7 @@ CL_InitInput
 */
 void CL_InitInput( void ) {
 	Cmd_AddCommand ("centerview",IN_CenterView);
+	Cmd_AddCommand( "playershotmenu", IN_PlayerShotMenu_f );
 
 	Cmd_AddCommand ("+moveup",IN_UpDown);
 	Cmd_AddCommand ("-moveup",IN_UpUp);
