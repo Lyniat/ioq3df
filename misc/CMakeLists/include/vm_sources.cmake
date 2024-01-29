@@ -1,6 +1,12 @@
-set(QCOMMON_SOURCES_armv7l
-	"${QCOMMON_DIR}/vm_armv7l.c"
-)
+if(PLATFORM STREQUAL "darwin")
+	set(QCOMMON_SOURCES_armv7l "")
+else()
+	set(QCOMMON_SOURCES_armv7l
+			"${QCOMMON_DIR}/vm_armv7l.c"
+	)
+endif()
+
+
 set(QCOMMON_SOURCES_arm ${QCOMMON_SOURCES_armv7l})
 set(QCOMMON_SOURCES_arm64 ${QCOMMON_SOURCES_armv7l})
 set(QCOMMON_SOURCES_x86

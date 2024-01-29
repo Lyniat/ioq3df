@@ -522,8 +522,8 @@ if(PLATFORM STREQUAL "darwin" AND (CMAKE_COMPILER_IS_GNUCC
 	OR CMAKE_C_COMPILER_ID STREQUAL "Clang"))
 	if(NOT SDL_FOUND AND USE_INTERNAL_SDL)
 		list(APPEND SDL_LIBRARIES
-			"${LIBS_DIR}/macosx/libSDL2main.a"
-			"${LIBS_DIR}/macosx/libSDL2-2.0.0.dylib" 
+			"${LIBS_DIR}/macosx-ub2/libSDL2main.a"
+			"${LIBS_DIR}/macosx-ub2/libSDL2-2.0.0.dylib"
 		)
 		set(SDL_FOUND TRUE)
 
